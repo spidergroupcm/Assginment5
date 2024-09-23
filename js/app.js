@@ -32,3 +32,75 @@ function navigate() {
       window.location.href = 'index.html';
   }
 }
+
+
+let currentBalance = 5000;
+let totalDonated = 0;
+
+// Check if donationHistory exists in localStorage
+let donationHistory = localStorage.getItem('donationHistory');
+
+// If donationHistory does not exist, set it to an empty array
+if (donationHistory) {
+    donationHistory = JSON.parse(donationHistory);
+} else {
+    donationHistory = [];
+}
+
+// DOM Elements
+const balanceDisplay = document.getElementById('balance');
+const totalDonatedDisplay = document.getElementById('total-donated');
+const donateBtn = document.getElementById('donate-btn');
+const donationInput = document.getElementById('donation-amount');
+const modal = document.getElementById('modal');
+const modalMessage = document.getElementById('modal-message');
+const closeModalBtn = document.getElementById('close-modal');
+
+// Update balance and total donated display
+balanceDisplay.innerText = currentBalance;
+totalDonatedDisplay.innerText = totalDonated;
+
+function updateHistory(amount) {
+    const transaction = {
+        amount: amount,
+        date: new Date().toLocaleString(),
+        remainingBalance: currentBalance
+    };
+    donationHistory.push(transaction);
+    localStorage.setItem('donationHistory', JSON.stringify(donationHistory));
+}
+
+function showModal(message) {
+    modalMessage.innerText = message;
+    modal.classList.remove('hidden');
+}
+
+closeModalBtn.onclick = function() {
+    modal.classList.add('hidden');
+};
+
+donateBtn.onclick = function() {
+    const donationValue = donationInput.value.trim();
+    const donationAmount = parseFloat(donationValue);
+
+    if (isNaN(donationAmount) || donationAmount <= 0) {
+        alert("Invalid input! Please enter a positive number.");
+    } else if (donationAmount > currentBalance) {
+        alert("Insufficient balance!");
+    } else {
+        currentBalance -= donationAmount;
+        balanceDisplay.innerText = currentBalance;
+
+        totalDonated += donationAmount;
+        totalDonatedDisplay.innerText = totalDonated;
+
+        showModal(`Successfully donated $${donationAmount.toFixed(2)}!`);
+
+        updateHistory(donationAmount);
+    }
+
+    donationInput.value = '';
+};
+
+
+
