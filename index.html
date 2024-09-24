@@ -14,11 +14,11 @@
 
  <!-- Navber Section Start -->
     <section class=" bg-white sticky top-0 z-100">
-        <header class="w-full bg-slate-100 flex justify-center items-center">
+        <header class="w-full bg-slate-100 flex justify-center px-5 items-center">
 
             <div class="md:w-3/4 w-11/12 flex justify-between items-center mt-3 mb-5">
                 <div>
-                    <button id="navButton" class="bg-green-500 text-black py-2 px-4 rounded" onclick="navigate()">Blog</button>
+                    <button id="navButton" class="bg-green-500 text-black font-bold py-2 px-4 rounded" onclick="navigate()">Blog</button>
                 </div>
         
     
@@ -27,13 +27,13 @@
                         <img src="assets/logo.png" alt="">
                     </div>
                     <div>
-                        <p class="text-black font-bold">Donate Bangladesh </p>
+                        <p class="text-black text-2xl font-bold">Donate Bangladesh </p>
                     </div>
         
                 </div>
         
                 
-                <div class="flex flex-row justify-center items-center gap-3">
+                <div class="flex flex-row justify-center items-center ">
                     <div>
                         <img src="assets/coin.png" alt="">
                     </div>
@@ -200,10 +200,11 @@
 
        <!-- History Modal -->
 <div id="historyModal" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
-    <div class="bg-white p-6 w-3/4 max-w-xl shadow-lg rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
-        <ul id="transactionHistoryList" class="mb-4">
-            <!-- Transaction items will be dynamically added here -->
+    <div class="bg-white p-6 w-3/4 max-w-xl shadow-lg rounded-lg flex flex-col justify-center items-center">
+        <img src="assets/logo.png" alt="">
+        <h2 class="text-2xl font-bold text-black mb-4">Your Transaction History</h2>
+        <ul id="transactionHistoryList" class="mb-4 ">
+            
         </ul>
         <button id="backHomeBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Go Back Home</button>
     </div>

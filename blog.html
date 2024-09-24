@@ -14,7 +14,7 @@
 
  <!-- Navber Section Start -->
     <section class=" bg-white sticky top-0 z-100">
-        <header class="w-full bg-slate-100 flex justify-center items-center">
+        <header class="w-full bg-slate-100 flex justify-center px-5 items-center">
 
             <div class="md:w-3/4 w-11/12 flex justify-between items-center mt-3 mb-5">
                 <div>
@@ -28,7 +28,7 @@
                         <img src="assets/logo.png" alt="">
                     </div>
                     <div>
-                        <p class="text-black font-bold">Donate Bangladesh </p>
+                        <p class="text-black text-2xl font-bold">Donate Bangladesh </p>
                     </div>
     
                 </div>
@@ -40,8 +40,9 @@
                     </div>
     
                     <div>
-                      <p class="text-lg  text-black"><strong><span id="balance" class="text-black">5000</span> BDT</strong></p>
+                      <p class="text-lg  text-black"><strong><span id="balance" class="text-black"> 5000</span> $</strong></p>
                     </div>
+                    
                 </div>
                 </div>
     
@@ -60,59 +61,62 @@
 
 <!-- Accordion Section -->
 
+<div class="flex flex-col justify-center items-center px-10">
 
+  
 <div class="collapse collapse-plus bg-green-200">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div class="collapse-title text-xl font-medium text-black">What is javascript dom?</div>
-    <div class="collapse-content">
-      <p class="text-gray-800">The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.</p>
-    </div>
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title text-xl font-medium text-black">What is javascript dom?</div>
+  <div class="collapse-content">
+    <p class="text-gray-800">The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.</p>
   </div>
+</div>
 
-  <div class="collapse collapse-plus bg-green-300">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div class="collapse-title text-xl font-medium text-black">How do you select an element by its ID in the DOM?</div>
-    <div class="collapse-content">
-      <p class="text-gray-800">To select an element by its ID, you can use the document.getElementById() method in JavaScript.</p>
-    </div>
+<div class="collapse collapse-plus bg-green-300">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title text-xl font-medium text-black">How do you select an element by its ID in the DOM?</div>
+  <div class="collapse-content">
+    <p class="text-gray-800">To select an element by its ID, you can use the document.getElementById() method in JavaScript.</p>
   </div>
+</div>
 
 
-  <div class="collapse collapse-plus bg-green-400">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div class="collapse-title text-xl font-medium text-black">How do event listeners work in the DOM?</div>
-    <div class="collapse-content">
-      <p class="text-gray-800">Event listeners allow you to run JavaScript code in response to user actions (e.g., clicks, keypresses). You can use addEventListener() to attach an event listener to an element:</p>
-    </div>
+<div class="collapse collapse-plus bg-green-400">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title text-xl font-medium text-black">How do event listeners work in the DOM?</div>
+  <div class="collapse-content">
+    <p class="text-gray-800">Event listeners allow you to run JavaScript code in response to user actions (e.g., clicks, keypresses). You can use addEventListener() to attach an event listener to an element:</p>
   </div>
+</div>
 
 
-  <div class="collapse collapse-plus bg-green-500">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div class="collapse-title text-xl font-medium text-black">What is the difference between innerHTML and textContent?</div>
-    <div class="collapse-content">
-      <p class="text-gray-800">innerHTML returns or sets the HTML markup contained within an element. It includes any child elements and their tags.</p>
-    </div>
+<div class="collapse collapse-plus bg-green-500">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title text-xl font-medium text-black">What is the difference between innerHTML and textContent?</div>
+  <div class="collapse-content">
+    <p class="text-gray-800">innerHTML returns or sets the HTML markup contained within an element. It includes any child elements and their tags.</p>
   </div>
+</div>
 
-  <div class="collapse collapse-plus bg-green-600">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div class="collapse-title text-xl font-medium text-black">Why should I support or use the DOM?</div>
-    <div class="collapse-content">
-      <p class="text-gray-900">The DOM API provides a standardized, versatile view of a document's contents. By supporting the DOM API, a program not only allows its data to be manipulated by other routines, but does so in a way that allows those manipulations to be reused with other DOMs, or to take advantage of solutions already written for those DOMs. This interoperability also allows programmers who invest in learning to use the DOM calls to apply those skills to other DOMs.</p>
-    </div>
+<div class="collapse collapse-plus bg-green-600">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title text-xl font-medium text-black">Why should I support or use the DOM?</div>
+  <div class="collapse-content">
+    <p class="text-gray-900">The DOM API provides a standardized, versatile view of a document's contents. By supporting the DOM API, a program not only allows its data to be manipulated by other routines, but does so in a way that allows those manipulations to be reused with other DOMs, or to take advantage of solutions already written for those DOMs. This interoperability also allows programmers who invest in learning to use the DOM calls to apply those skills to other DOMs.</p>
   </div>
+</div>
 
 
-  <div class="collapse collapse-plus bg-green-700 ">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div class="collapse-title text-xl font-medium text-black">What is a DOM application?</div>
-    <div class="collapse-content">
-      <p class="text-gray-800 mb-6">A DOM application (also called a client application) is that piece of software which takes the document made available by the implementation, and does something to it. A script which runs in a browser is an example of an application.</p>
-    </div>
+<div class="collapse collapse-plus bg-green-700 ">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title text-xl font-medium text-black">What is a DOM application?</div>
+  <div class="collapse-content">
+    <p class="text-gray-800 mb-6">A DOM application (also called a client application) is that piece of software which takes the document made available by the implementation, and does something to it. A script which runs in a browser is an example of an application.</p>
   </div>
+</div>
 
 
+</div>
 
   <div class="mt-5 mb-5 flex justify-center items-center">
     
