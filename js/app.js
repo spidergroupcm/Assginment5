@@ -1,4 +1,3 @@
-// This script will handle the button functionality and page redirection
 
 
 const donationBtn = document.getElementById('donationBtn');
@@ -15,7 +14,7 @@ historyBtn.addEventListener('click', function () {
 
 
 
-// Java Script fot Blog Button
+// Java Script for Blog Button
 
 function navigate() {
   const button = document.getElementById('navButton');
@@ -76,65 +75,3 @@ let totalBalance = 5000;
         }
 
         updateTotalBalance();
-
-
-
-// // ishfushyfisdfsfh
-
-// let currentBalance = 5000;
-// let totalDonated = 0;
-
-
-
-// const balanceDisplay = document.getElementById('balance');
-// const totalDonatedDisplay = document.getElementById('total-donated');
-
-// const donateBtn = document.getElementById('donate-btn');
-// const donationInput = document.getElementById('donation-amount');
-// const modal = document.getElementById('modal');
-// const modalMessage = document.getElementById('modal-message');
-// const closeModalBtn = document.getElementById('close-modal');
-
-
-
-// // Update balance and total donated display
-// balanceDisplay.innerText = currentBalance;
-// totalDonatedDisplay.innerText = totalDonated;
-
-
-// function showModal(message) {
-//     modalMessage.innerText = message;
-//     modal.classList.remove('hidden');
-// }
-
-// closeModalBtn.onclick = function() {
-//     modal.classList.add('hidden');
-// };
-
-// donateBtn.onclick = function() {
-//     const donationValue = donationInput.value.trim();
-//     const donationAmount = parseFloat(donationValue);
-
-//     if (isNaN(donationAmount) || donationAmount <= 0) {
-//         alert("Invalid input! Please enter a positive number.");
-//     } else if (donationAmount > currentBalance) {
-//         alert("Insufficient balance!");
-//     } else {
-//         currentBalance -= donationAmount;
-//         balanceDisplay.innerText = currentBalance;
-
-//         totalDonated += donationAmount;
-//         totalDonatedDisplay.innerText = totalDonated;
-
-//         showModal(`Successfully donated ${donationAmount.toFixed(2)} BDT`);
-
-//         updateHistory(donationAmount);
-//     }
-
-//     donationInput.value = '';
-// };
-
-
-
-
-
