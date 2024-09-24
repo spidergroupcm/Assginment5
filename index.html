@@ -59,9 +59,7 @@
     
                 <button id="donationBtn" class="bg-green-500 text-white px-4 py-2 rounded">Donation</button>
                 
-                <a href="history.html">
-                    <button id="historyBtn" class="bg-gray-300 text-black px-4 py-2 rounded">History</button>
-                </a>
+                <button id="historyBtn" class="bg-gray-300 text-black px-4 py-2 rounded" onclick="showHistory()">History</button>
 
               </div>
           
@@ -199,6 +197,17 @@
         <button class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600" onclick="closeModal()">Close</button>
     </div>
 
+
+       <!-- History Modal -->
+<div id="historyModal" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-6 w-3/4 max-w-xl shadow-lg rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
+        <ul id="transactionHistoryList" class="mb-4">
+            <!-- Transaction items will be dynamically added here -->
+        </ul>
+        <button id="backHomeBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Go Back Home</button>
+    </div>
+</div>
 
 
 
