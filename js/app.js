@@ -1,17 +1,15 @@
 // This script will handle the button functionality and page redirection
 
-// Select buttons
+
 const donationBtn = document.getElementById('donationBtn');
 const historyBtn = document.getElementById('historyBtn');
 
-// Add event listeners for redirection and style toggling
+
 donationBtn.addEventListener('click', function () {
-  // Redirect to index.html (Donation page)
   window.location.href = 'index.html';
 });
 
 historyBtn.addEventListener('click', function () {
-  // Redirect to history.html (History page)
   window.location.href = 'history.html';
 });
 
@@ -23,84 +21,120 @@ function navigate() {
   const button = document.getElementById('navButton');
   
   if (button.innerText === 'Blog') {
-      // Change button label to "Home" and navigate to blog.html
+      
       button.innerText = 'Home';
       window.location.href = 'blog.html';
   } else {
-      // Change button label to "Blog" and navigate back to index.html
+     
       button.innerText = 'Blog';
       window.location.href = 'index.html';
   }
 }
 
 
-let currentBalance = 5000;
-let totalDonated = 0;
 
-// Check if donationHistory exists in localStorage
-let donationHistory = localStorage.getItem('donationHistory');
+let totalBalance = 5000;
 
-// If donationHistory does not exist, set it to an empty array
-if (donationHistory) {
-    donationHistory = JSON.parse(donationHistory);
-} else {
-    donationHistory = [];
-}
+        function updateTotalBalance() {
+            document.getElementById('totalBalance').innerText = totalBalance;
+        }
 
-// DOM Elements
-const balanceDisplay = document.getElementById('balance');
-const totalDonatedDisplay = document.getElementById('total-donated');
-const donateBtn = document.getElementById('donate-btn');
-const donationInput = document.getElementById('donation-amount');
-const modal = document.getElementById('modal');
-const modalMessage = document.getElementById('modal-message');
-const closeModalBtn = document.getElementById('close-modal');
+        function donate(donatedId, inputId) {
+            const donatedElement = document.getElementById(donatedId);
+            const donationInput = document.getElementById(inputId);
+            let totalDonated = parseInt(donatedElement.innerText.replace('$', ''));
+            let donationAmount = parseInt(donationInput.value);
 
-// Update balance and total donated display
-balanceDisplay.innerText = currentBalance;
-totalDonatedDisplay.innerText = totalDonated;
+            if (isNaN(donationAmount) || donationAmount <= 0) {
+                alert('Please enter a valid positive number for the donation.');
+                return;
+            }
 
-function updateHistory(amount) {
-    const transaction = {
-        amount: amount,
-        date: new Date().toLocaleString(),
-        remainingBalance: currentBalance
-    };
-    donationHistory.push(transaction);
-    localStorage.setItem('donationHistory', JSON.stringify(donationHistory));
-}
+            if (donationAmount > totalBalance) {
+                alert('You do not have enough balance for this donation.');
+                return;
+            }
 
-function showModal(message) {
-    modalMessage.innerText = message;
-    modal.classList.remove('hidden');
-}
+            totalBalance -= donationAmount;
+            totalDonated += donationAmount;
 
-closeModalBtn.onclick = function() {
-    modal.classList.add('hidden');
-};
+            donatedElement.innerText = `$${totalDonated}`;
+            updateTotalBalance();
 
-donateBtn.onclick = function() {
-    const donationValue = donationInput.value.trim();
-    const donationAmount = parseFloat(donationValue);
+            showModal();
+            donationInput.value = '';
+        }
 
-    if (isNaN(donationAmount) || donationAmount <= 0) {
-        alert("Invalid input! Please enter a positive number.");
-    } else if (donationAmount > currentBalance) {
-        alert("Insufficient balance!");
-    } else {
-        currentBalance -= donationAmount;
-        balanceDisplay.innerText = currentBalance;
+        function showModal() {
+            document.getElementById('modalBackdrop').classList.remove('hidden');
+            document.getElementById('donationModal').classList.remove('hidden');
+        }
 
-        totalDonated += donationAmount;
-        totalDonatedDisplay.innerText = totalDonated;
+        function closeModal() {
+            document.getElementById('modalBackdrop').classList.add('hidden');
+            document.getElementById('donationModal').classList.add('hidden');
+        }
 
-        showModal(`Successfully donated $${donationAmount.toFixed(2)}!`);
+        updateTotalBalance();
 
-        updateHistory(donationAmount);
-    }
 
-    donationInput.value = '';
-};
+
+// // ishfushyfisdfsfh
+
+// let currentBalance = 5000;
+// let totalDonated = 0;
+
+
+
+// const balanceDisplay = document.getElementById('balance');
+// const totalDonatedDisplay = document.getElementById('total-donated');
+
+// const donateBtn = document.getElementById('donate-btn');
+// const donationInput = document.getElementById('donation-amount');
+// const modal = document.getElementById('modal');
+// const modalMessage = document.getElementById('modal-message');
+// const closeModalBtn = document.getElementById('close-modal');
+
+
+
+// // Update balance and total donated display
+// balanceDisplay.innerText = currentBalance;
+// totalDonatedDisplay.innerText = totalDonated;
+
+
+// function showModal(message) {
+//     modalMessage.innerText = message;
+//     modal.classList.remove('hidden');
+// }
+
+// closeModalBtn.onclick = function() {
+//     modal.classList.add('hidden');
+// };
+
+// donateBtn.onclick = function() {
+//     const donationValue = donationInput.value.trim();
+//     const donationAmount = parseFloat(donationValue);
+
+//     if (isNaN(donationAmount) || donationAmount <= 0) {
+//         alert("Invalid input! Please enter a positive number.");
+//     } else if (donationAmount > currentBalance) {
+//         alert("Insufficient balance!");
+//     } else {
+//         currentBalance -= donationAmount;
+//         balanceDisplay.innerText = currentBalance;
+
+//         totalDonated += donationAmount;
+//         totalDonatedDisplay.innerText = totalDonated;
+
+//         showModal(`Successfully donated ${donationAmount.toFixed(2)} BDT`);
+
+//         updateHistory(donationAmount);
+//     }
+
+//     donationInput.value = '';
+// };
+
+
 
 
 
